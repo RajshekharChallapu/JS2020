@@ -1,11 +1,10 @@
-const defaultResult = 10;
+const defaultResult = 0;
 let currentResult = defaultResult;
 
 function getUserInputNumber() {
     return parseInt(usrInput.value);
 }
 
-/* called by add function and takes params data from that func and stroing into new variable and printing o/p result */
 function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
     const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
     outputResult(currentResult, calcDescription);
@@ -13,33 +12,33 @@ function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
 }
 
 function add() {
-    /* stores the function value and calling function..getUserInputNumber func do the coversion and returns the value */
     const enteredNumber = getUserInputNumber();
-    /* storing currentresult value */
     const initialResult = currentResult;
-    /* calculation of current value and user entered number*/
     currentResult = currentResult + enteredNumber;
-    /* calling new function with params within the function  */
+    /* alternative way */
+    //currentResult +=  enteredNumber;
+    /* increment */
+    //currentResult++; 
     createAndWriteOutput('+', initialResult, enteredNumber);
 }
 
 function subtract() {
     const enteredNumber = getUserInputNumber();
     const initialResult = currentResult;
-    currentResult = currentResult - enteredNumber;
+    currentResult -= enteredNumber;
     createAndWriteOutput('-', initialResult, enteredNumber);
 }
 
 function multiply() {
     const enteredNumber = getUserInputNumber();
     const initialResult = currentResult;
-    currentResult = currentResult * enteredNumber;
+    currentResult *= enteredNumber;
     createAndWriteOutput('*', initialResult, enteredNumber);
 }
 function divide() {
     const enteredNumber = getUserInputNumber();
     const initialResult = currentResult;
-    currentResult = currentResult / enteredNumber;
+    currentResult /= enteredNumber;
     createAndWriteOutput('/', initialResult, enteredNumber);
 }
 
