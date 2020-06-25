@@ -1,45 +1,50 @@
 
-
 const defaultResult = 0;
 let currentResult = defaultResult;
 
-
-/* pure functions */
-function add(a, b) {
-    /* function always try to refer local variable than the global variable, if no local variable then fall back to global var */
-    const result = a + b;
-    return result;
+/* calling function indiredctly === thru browser */
+function add() {
+    currentResult = currentResult + userInput.value;
+    outputResult(currentResult, '');
 }
 
- currentResult = add (1,2);
-
-let test= `( ${defaultResult} + 10) * 3/2-1`;
-
-outputResult(currentResult, test);
+addBtn.addEventListener('click', add);
 
 
 
 
-                                                       "Shadowed Variables"
-// You learned about local("function-internal")variables and global variables.What happens if you have this code
-//     ?
-     let userName = 'Max';
-function greetUser(name) {
-    let userName = name;
-    alert(userName);
+/* "Indirect" vs "Direct" Function Execution - Summary
+It can be confusing to see that there seem to be two ways of executing a function : */
+ function add() {
+    something = someNum + someOtherNum;
 }
-userName = 'Manu';
-greetUser('Max');
+// add() vs add
 
-// This will actually show an alert that says 'Max' (NOT 'Manu').You might 've expected that an error gets thrown because we use and declare userName more t' +
-//     'han once - and as you learned, that is not allowed.'
-// It indeed is not allowed on the same level / in the same scope.So this would fail : let userName = 'Max';
-// let userName = 'Manu';
-// Why does it work in the first code snippet though
-//     ? Because we first create a global variable userName via
+/* It 's important to understand why we have these "two ways"!
 
-let userName = 'Max';
-// But then we never re - declare that on the global level(that would not be allowed).We only declare another variable inside of the function.But since variables in functions get their own scope,
-// JavaScript does something which is called "shadowing".It creates a new variable on a different scope - this variables does not overwrite or remove the global variable by the way - both co - exist.When referring to userName inside of the greetUser function we now always refer to the local,
-// shadowed variable.Only if no such local variable existed,
-// JavaScript would fall back to the global variable.
+In general,
+you call a function that you defined by using its name(e.g.add)and adding parentheses(with any parameters the function might need - or empty parentheses if no parameters are required like in the above example). */
+ => add()
+
+/* This is how you execute a function from your code.Whenever JavaScript encounters this statement,
+it goes ahead and runs the code in the function.Period !Sometimes however,
+you don 't want to execute the function immediately. You rather want to "tell JavaScript"' +
+    ' that it should execute a certain function at some point in the future (e.g. whe' +
+        'n some event occurs).'
+That 's when you don' t directly call the function but when you instead just provide JavaScript with the name of the function. =>  */
+
+someButton.addEventListener('click', add);
+
+/* This snippet would tell JavaScript : "Hey, when the button is clicked, go ahead and execute add." */
+    someButton.addEventListener('click', add());
+/* would be wrong.Why
+    ? Because JavaScript would encounter that line when it parses / executes your script and register the event listener AND immediately execute add - because you added parentheses => That means(see above)
+    : "Please execute that function!".Just writing add somewhere in your code would do 
+        nothing by the way : */
+         let someVar = 5;
+    add
+alert('Do something else...');
+/* Why
+    ? Because you just throw the name of the function in there but you don 't give any other information to JavaScript. It basically doesn' t know what to do 
+        with that name("Should I run that when a click occurs? After a certain amount of time? I don't k" +
+                "now...")and hence JavaScript kind of ignores this statement. */
