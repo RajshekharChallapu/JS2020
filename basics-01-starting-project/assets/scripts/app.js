@@ -1,14 +1,22 @@
 
-/* function name add with parameters */
-function add(add1, add2) {
+// const used for fixed values
+const defaultResult =0;
 
-    // addition and storing value into variable result
-    const iamStroing = add1 + add2;
-    //alert to show above variable
-    alert('result is ' + iamStroing);
+//assigning const vaiable --value is always '0'
+let currentResult = defaultResult;
+
+function add(a, b) {
+    const result = a + b;
+    return result;
 }
 
-/* funciton calling and also declred pram "cal1 and cal1" values*/
-add(10,22);
-add(102, 22);
+// storing function value and by calling function and funct do the calculation as instructed in above function 
+ currentResult = add (1,2);
 
+
+//enclosed by backtick is called template literal and "$" sign with {currly} braces are placeholders 
+let test= `( ${defaultResult} + 10) * 3/2-1`;
+
+
+// print the results by calling decalred param
+outputResult(currentResult, test);
