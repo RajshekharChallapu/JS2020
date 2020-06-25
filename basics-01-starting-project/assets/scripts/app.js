@@ -1,15 +1,50 @@
-
-// const used for fixed values
-const defaultResult =0;
-
-//assigning const vaiable --value is always '0'
+const defaultResult = 10;
 let currentResult = defaultResult;
 
-currentResult = (currentResult + 10) * 3/2-1;
+function getUserInputNumber() {
+    return parseInt(usrInput.value);
+}
 
-//enclosed by backtick is called template literal and "$" sign with {currly} braces are placeholders 
-let test= `( ${defaultResult} + 10) * 3/2-1`;
+/* called by add function and takes params data from that func and stroing into new variable and printing o/p result */
+function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
+    const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
+    outputResult(currentResult, calcDescription);
 
+}
 
-// print the results by calling decalred param
-outputResult(currentResult, errorMessage);
+function add() {
+    /* stores the function value and calling function..getUserInputNumber func do the coversion and returns the value */
+    const enteredNumber = getUserInputNumber();
+    /* storing currentresult value */
+    const initialResult = currentResult;
+    /* calculation of current value and user entered number*/
+    currentResult = currentResult + enteredNumber;
+    /* calling new function with params within the function  */
+    createAndWriteOutput('+', initialResult, enteredNumber);
+}
+
+function subtract() {
+    const enteredNumber = getUserInputNumber();
+    const initialResult = currentResult;
+    currentResult = currentResult - enteredNumber;
+    createAndWriteOutput('-', initialResult, enteredNumber);
+}
+
+function multiply() {
+    const enteredNumber = getUserInputNumber();
+    const initialResult = currentResult;
+    currentResult = currentResult * enteredNumber;
+    createAndWriteOutput('*', initialResult, enteredNumber);
+}
+function divide() {
+    const enteredNumber = getUserInputNumber();
+    const initialResult = currentResult;
+    currentResult = currentResult / enteredNumber;
+    createAndWriteOutput('/', initialResult, enteredNumber);
+}
+
+/* listners and calling functions */
+addBtn.addEventListener('click', add);
+subtractBtn.addEventListener('click', subtract);
+multiplyBtn.addEventListener('click', multiply);
+divideBtn.addEventListener('click', divide);
