@@ -1,10 +1,18 @@
 
-const defaultResult = 0;
+const defaultResult = 10;
 let currentResult = defaultResult;
 
-/* calling function indiredctly === thru browser */
+
+
 function add() {
-    currentResult = currentResult + userInput.value;
+    //here currentResul treated as number and  userInput as string..so to covert this to number we have inbuilt methods like parseInt, parseFloat
+// aslo we can use , if we want non decimal number currentResult = currentResult
+// + +(userInput.value);
+    currentResult = currentResult + parseInt(userInput.value);
+
+    /* convert number to string, as we know below currentResult is storing numbers only so to convert this ...EX: userInput =10 and result would be like 1010 */
+currentResult = currentResult.toString() + parseInt(userInput.value);
+
     outputResult(currentResult, '');
 }
 
@@ -13,38 +21,3 @@ addBtn.addEventListener('click', add);
 
 
 
-/* "Indirect" vs "Direct" Function Execution - Summary
-It can be confusing to see that there seem to be two ways of executing a function : */
- function add() {
-    something = someNum + someOtherNum;
-}
-// add() vs add
-
-/* It 's important to understand why we have these "two ways"!
-
-In general,
-you call a function that you defined by using its name(e.g.add)and adding parentheses(with any parameters the function might need - or empty parentheses if no parameters are required like in the above example). */
- => add()
-
-/* This is how you execute a function from your code.Whenever JavaScript encounters this statement,
-it goes ahead and runs the code in the function.Period !Sometimes however,
-you don 't want to execute the function immediately. You rather want to "tell JavaScript"' +
-    ' that it should execute a certain function at some point in the future (e.g. whe' +
-        'n some event occurs).'
-That 's when you don' t directly call the function but when you instead just provide JavaScript with the name of the function. =>  */
-
-someButton.addEventListener('click', add);
-
-/* This snippet would tell JavaScript : "Hey, when the button is clicked, go ahead and execute add." */
-    someButton.addEventListener('click', add());
-/* would be wrong.Why
-    ? Because JavaScript would encounter that line when it parses / executes your script and register the event listener AND immediately execute add - because you added parentheses => That means(see above)
-    : "Please execute that function!".Just writing add somewhere in your code would do 
-        nothing by the way : */
-         let someVar = 5;
-    add
-alert('Do something else...');
-/* Why
-    ? Because you just throw the name of the function in there but you don 't give any other information to JavaScript. It basically doesn' t know what to do 
-        with that name("Should I run that when a click occurs? After a certain amount of time? I don't k" +
-                "now...")and hence JavaScript kind of ignores this statement. */
