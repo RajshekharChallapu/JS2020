@@ -2,7 +2,7 @@
 // const used for fixed values
 const defaultResult =0;
 
-//assigning const vaiable --value is always '0'
+//assigning const variable --value is always '0'
 let currentResult = defaultResult;
 
 currentResult = (currentResult + 10) * 3/2-1;
