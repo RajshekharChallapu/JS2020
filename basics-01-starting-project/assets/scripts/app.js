@@ -2,14 +2,15 @@
 const defaultResult = 10;
 let currentResult = defaultResult;
 
-
+/* creating a num function to get splitting code into functions and calling usefull for more code scenarios */
+function getUserInputNumber(){
+return parseInt(usrInput.value);
+}
 
 function add() {
-      //resuable variable and it is converting string to number
-    const enteredNumber = parseInt(usrInput.value)
-    // any vaule passded in to this literal is coverted as string by default
+    const enteredNumber = getUserInputNumber();
     const calcDescription = `${currentResult} + ${enteredNumber}`;
-    currentResult = currentResult + parseInt(enteredNumber);
+    currentResult = currentResult +enteredNumber;
     outputResult(currentResult, calcDescription);
 }
 
