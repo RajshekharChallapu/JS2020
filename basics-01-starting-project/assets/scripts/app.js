@@ -15,10 +15,6 @@ function add() {
     const enteredNumber = getUserInputNumber();
     const initialResult = currentResult;
     currentResult = currentResult + enteredNumber;
-    /* alternative way */
-    //currentResult +=  enteredNumber;
-    /* increment */
-    //currentResult++; 
     createAndWriteOutput('+', initialResult, enteredNumber);
 }
 
