@@ -1,15 +1,14 @@
 
-// const used for fixed values
-const defaultResult =0;
+/* function name add with parameters */
+function add(add1, add2) {
 
-//assigning const vaiable --value is always '0'
-let currentResult = defaultResult;
+    // addition and storing value into variable result
+    const iamStroing = add1 + add2;
+    //alert to show above variable
+    alert('result is ' + iamStroing);
+}
 
-currentResult = (currentResult + 10) * 3/2-1;
+/* funciton calling and also declred pram "cal1 and cal1" values*/
+add(10,22);
+add(102, 22);
 
-//enclosed by backtick is called template literal and "$" sign with {currly} braces are placeholders 
-let test= `( ${defaultResult} + 10) * 3/2-1`;
-
-
-// print the results by calling decalred param
-outputResult(currentResult, errorMessage);
