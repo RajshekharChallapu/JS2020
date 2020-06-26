@@ -8,7 +8,7 @@ function getUserInputNumber() {
 
 function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
     const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
-    outputResult(currentResult, calcDescription);
+    outputResult(currentResult, calcDescription); // from vendor file
 }
 
 /* takes input from add function that added as params in writeToLog funct */
