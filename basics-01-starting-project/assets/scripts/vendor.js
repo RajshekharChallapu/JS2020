@@ -1,3 +1,4 @@
+/* html buttons  */
 const usrInput = document.getElementById('input-number');
 const addBtn = document.getElementById('btn-add');
 const subtractBtn = document.getElementById('btn-subtract');
