@@ -26,6 +26,8 @@ function add() {
      logEntries.push(logEntry);
     /* adding values to arry list */
     logEntries.push(enteredNumber);
+    /* "." notation allows to access object parameters */
+    console.log(logEntry.operation);
     console.log(logEntries);
 }
 
