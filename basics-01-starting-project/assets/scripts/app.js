@@ -40,7 +40,6 @@ function subtract() {
     currentResult -= enteredNumber;
     createAndWriteOutput('-', initialResult, enteredNumber);
     writeToLog('Subtract', initialResult, enteredNumber, currentResult);
-
 }
 
 function multiply() {
