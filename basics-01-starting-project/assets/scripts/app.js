@@ -9,17 +9,24 @@ function getUserInputNumber() {
 function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
     const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
     outputResult(currentResult, calcDescription);
-
 }
 
 function add() {
     const enteredNumber = getUserInputNumber();
     const initialResult = currentResult;
-    currentResult = currentResult + enteredNumber;
+    currentResult = currentResult + enteredNumber; 
     createAndWriteOutput('+', initialResult, enteredNumber);
+    /* object creation and using onjetc in function by function variables */
+    const logEntry = {
+        operation: 'ADD',
+        preResult: initialResult,
+        number: enteredNumber,
+        result: currentResult
+    };
+     logEntries.push(logEntry);
     /* adding values to arry list */
     logEntries.push(enteredNumber);
-    console.log(logEntries[2]);
+    console.log(logEntries);
 }
 
 function subtract() {
