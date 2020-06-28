@@ -28,7 +28,14 @@ function writeToLog(operationIdentifier, prevResult, operationNumber, newResult)
 /*  reusable conditions in functions  */
 /* checks all are ture only true value executes*/
 function calculateResult(calculationType) {
-if (calculationType !== 'ADD' && calculationType !== 'SUBTRACT' && calculationType !== 'MULTIPLY' && calculationType !== 'DIVIDE') {
+const enteredNumber = getUserInputNumber();
+if (calculationType !== 'ADD' &&
+    calculationType !== 'SUBTRACT' &&
+    calculationType !== 'MULTIPLY' &&
+    calculationType !== 'DIVIDE' ||
+    //enteredNumber === 0
+    !enteredNumber // falsy and truthy check 
+) {
     return;
 }
 
@@ -36,7 +43,7 @@ if (calculationType !== 'ADD' && calculationType !== 'SUBTRACT' && calculationTy
 // if(calculationType === 'AND' || calculationType === 'SUBTRACT' || calculationType === 'MULTIPLY' || calculationType === 'DIVIDE'){
 //     return;
 // }
-    const enteredNumber = getUserInputNumber();
+   
     const initialResult = currentResult;
     let mathOperator;
     if (calculationType === 'ADD') {
