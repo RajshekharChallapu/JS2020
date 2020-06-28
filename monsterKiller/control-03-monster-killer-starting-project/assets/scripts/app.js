@@ -111,14 +111,15 @@ writeToLog(LOG_EVENT_GAME_OVER, 'PLAYER WON', currentMonsterHealth, currentPlaye
 }
 
 function attackMonster(mode) {
-    let maxDamage;
-    if (mode === MODE_ATTACK) {
+    const maxDamage = mode === MODE_ATTACK ? ATTACK_VALUE : STRONG_ATTACK_VALUE;
+    let logEvent = mode === MODE_ATTACK ? LOG_EVENT_PLAYER_ATTACK : LOG_EVENT_PALYER_STRONG_ATTACK;
+    /* if (mode === MODE_ATTACK) {
         maxDamage = ATTACK_VALUE;
         logEvent =LOG_EVENT_PLAYER_ATTACK;
     } else if (mode === MODE_ATTACK_STRONG) {
         maxDamage = STRONG_ATTACK_VALUE;
         logEvent = LOG_EVENT_PALYER_STRONG_ATTACK;
-    }
+    } */
     const damage = dealMonsterDamage(maxDamage);
     currentMonsterHealth -= damage;
 writeToLog(logEvent, 'PLAYER WON', currentMonsterHealth, currentPlayerHealth);
