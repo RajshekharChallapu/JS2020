@@ -201,7 +201,11 @@ function printLogHandler() {
 //         console.log(i);
 
 //     }
-    console.log(battleLog);
+// printing log in array fomrat
+for (let i=0; i<battleLog.length; i++){
+    console.log(battleLog[i]);
+}
+    //console.log(battleLog);
 }
 
 attackBtn.addEventListener('click', attackHandler);
