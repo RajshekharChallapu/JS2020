@@ -19,6 +19,7 @@ const startGameBtn = document.getElementById('start-game-btn');
 
 //console.dir(startGame);
 
+//using anonymous function
 startGameBtn.addEventListener('click', function(){
     console.log('game start ')
 });
