@@ -1,14 +1,14 @@
-let name = 'Raja';
 
-//here if we use "var" optput prints with out any error..const and let are not letting to access by outside of the block.. so we have more control on if or functions blocks..so to say if we declare the variable inside the blok means to use it in that function only
-if(name === 'Raja'){
-    let hobbies = ['Sports', 'Cooking'];
-    console.log(hobbies);
+//calling getName func in the code ... prompt will execute
+function getName(){
+    return prompt('your name: ', '');
 }
-function greet(){
-    let age = 30;
-    let name = 'mans'
-    console.log(name, age, hobbies );
+
+function greet() {
+    // calling getName and stored in to userName
+    const userName = getName();
+    console.log('Hello ' + userName);
 }
-console.log(name, hobbies);
+
+// greet function calling for execution
 greet();
