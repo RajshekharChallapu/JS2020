@@ -2,9 +2,9 @@ const startGameBtn = document.getElementById('start-game-btn');
 
 
 // creating a function in expression mode // 
-const start = function (){
-    console.log('game is starting');
-};
+// const start = function (){
+//     console.log('game is starting');
+// };
 
 // const person = {
 //     name: 'Max',
@@ -19,4 +19,6 @@ const start = function (){
 
 //console.dir(startGame);
 
-startGameBtn.addEventListener('click', start);
+startGameBtn.addEventListener('click', function(){
+    console.log('game start ')
+});
