@@ -1,25 +1,29 @@
 const startGameBtn = document.getElementById('start-game-btn');
 
+const ROCK ='ROCK';
+const PAPER = 'PAPER';
+const SCISSORS = 'SCISSORS';
+const DEFAULT_USER_CHOICE = ROCK;
 
-// creating a function in expression mode // 
-// const start = function (){
-//     console.log('game is starting');
-// };
+let gameIsRunning = false;
 
-// const person = {
-//     name: 'Max',
-//     //using function in an object i scalled methods
-//     greet: function greet() {
-//         console.log('helo there');
-//     }
-// };
-
-// called method
-//person.greet();
-
-//console.dir(startGame);
-
-//using anonymous function
+const getPlayerChoice = function() {
+    const selection = prompt ('${ROCK}, ${PAPER} or ${SCISSORS}?', '').toUpperCase();
+    if(
+        selection !== 'Rock' &&
+        selection !== 'Paper' &&
+        selection !== 'Scissors'
+    ){
+        alert ('Invalid choice! we chose ${DEFAULT_USER_CHOICE} for you!');
+        return DEFAULT_USER_CHOICE;
+    }
+}
 startGameBtn.addEventListener('click', function(){
-    console.log('game start ')
+    if(gameIsRunning){
+        return;
+    }
+    gameIsRunning = true;
+    console.log('game start ');
+    const palyerSelection = getPlayerChoice();
+    console.log(palyerSelection);
 });
