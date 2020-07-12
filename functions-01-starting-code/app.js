@@ -1,18 +1,22 @@
 const startGameBtn = document.getElementById('start-game-btn');
 
-function startGame(){
-    console.log('game is starting')
-}
 
-const person = {
-    name: 'Max',
-    //using function in an object i scalled methods
-    greet: function greet() {
-        console.log('helo there');
-    }
+// creating a function in expression mode // 
+const start = function (){
+    console.log('game is starting');
 };
 
-// called method
-person.greet();
+// const person = {
+//     name: 'Max',
+//     //using function in an object i scalled methods
+//     greet: function greet() {
+//         console.log('helo there');
+//     }
+// };
 
-startGameBtn.addEventListener('click', startGame);
+// called method
+//person.greet();
+
+//console.dir(startGame);
+
+startGameBtn.addEventListener('click', start);
