@@ -26,3 +26,21 @@ console.log(listItems);
 
 const fromNumber = Array.from (listItems);
 console.log(fromNumber);
+
+
+const hobbies = ['Cooking', 'sport'];
+
+const personalData = [30, 'Max', {moreDetails: []}];
+console.log(personalData);
+
+const analystData = [[1, 1.6], [-5.4, 2.1]];
+//console.log(analystData);
+
+for (const data of analystData){
+    for (const dataPoints of data){
+        console.log(dataPoints);
+    }
+   // console.log(data);
+}
+
+console.log(personalData[1]);
