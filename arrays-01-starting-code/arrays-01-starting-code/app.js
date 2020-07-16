@@ -60,3 +60,6 @@ console.log(hobbies);
 hobbies[1] ='reading';
 hobbies[5] ='cook';
 console.log(hobbies);
+
+const removableElements = hobbies.splice(-1, 1);
+console.log(hobbies);
