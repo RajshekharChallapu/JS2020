@@ -73,3 +73,10 @@ const storeResults = testResults.concat([4.55,4]);
 
 testResults.push(15.65);
 console.log(storeResults, testResults);
+
+console.log(testResults.indexOf(1.5));
+
+
+// for object indexOf won't work
+const personData = [{name: 'max'}, {name:'raja'}];
+console.log(personData.indexOf({name: 'raja'}));
